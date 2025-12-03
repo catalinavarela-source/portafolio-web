@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Catalina Varela</title>
+
+<style>
+
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        background:#000;
+        font-family: Arial, Helvetica, sans-serif;
+        color:#fff;
+    }
+
+
+    .wrapper{
+         width:1080px;
+         margin:0 auto;
+    }
+
+
+    .portada{
+        width:100%;
+        background:url("fondo.png") repeat;
+        padding:120px 0 160px;
+        display:flex;
+        justify-content:center;
+    }
+
+    .portada img{
+        width:100%;
+        max-width:900px;
+        display:block;
+    }
+
+    .banner{
+       width:100%;
+    }
+
+    .banner img{
+        width:100%;
+       display:block;
+    }
+
+    .about{
+       width:100%;
+       background:#111;
+       padding:80px 0;
+    }
+
+    .about-box{
+        width:1080px;
+        margin:0 auto;
+        position:relative;
+        padding-bottom:100px;
+    }
+
+    .about .texture{
+        position:absolute;
+        top:0;
+        left:0;
+        width:600px;
+        opacity:0.18;
+    }
+
+    .about .stars{
+        position:absolute;
+        top:40px;
+        right:40px;
+        width:260px;
+        opacity:0.55;
+    }
+
+    .cato-graf{
+        position:absolute;
+        top:40px;
+        left:40px;
+        width:260px;
+        z-index:5;
+    }
+
+    .paper-about{
+        width:100%;
+        background-image:url("—Pngtree—torn white paper_6823196.png");
+        background-size:100% 100%;
+        background-repeat:no-repeat;
+        padding:80px 60px;
+        position:relative;
+        z-index:2;
+    }
+
+    .idcard{
+        width:300px;
+        margin:0 auto 40px;
+        display:block;
+        z-index:5;
+        position:relative;
+    }
+
+    .about-text{
+        color:#000;
+        font-size:17px;
+        line-height:1.55;
+        max-width:780px;
+        margin:0 auto;
+        text-align:justify;
+        font-weight:500;
+    }
+
+    .fade{
+        opacity:0;
+        transform: translateY(40px);
+        transition:800ms ease;
+    }
+
+    .fade.visible{
+        opacity:1;
+        transform: translateY(0);
+    }
+
+
+    .foto-section {
+        background: #000 url("fondo.png") repeat;
+        padding: 80px 0 120px;
+    }
+
+    .foto-inner {
+        position: relative;
+    }
+
+
+    .foto-heading {
+        margin-bottom: 40px;
+    }
+
+    .foto-heading img {
+        width: 420px;          
+        height: auto;
+        display: block;
+    }
+
+
+    .foto-crack {
+        position: absolute;
+        opacity: 0.7;   
+        pointer-events: none;
+    }
+
+    .crack-1 {
+        top: 40px;
+        right: -40px;
+        width: 260px;
+        transform: rotate(20deg);
+    }
+
+    .crack-2 {
+        top: 260px;
+        left: -40px;
+        width: 260px;
+        transform: rotate(-10deg);
+    }
+
+    .crack-3 {
+        top: 520px;
+        right: -30px;
+        width: 240px;
+        transform: rotate(15deg);
+    }
+
+    .foto-block {
+        margin: 70px 0;
+    }
+
+    .foto-paper {
+        position: relative;
+        background-image: url("png.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        padding: 70px 80px 55px;
+        filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.7));
+    }
+
+
+    .foto-main {
+        width: 100%;
+        display: block;
+        margin: 0 auto 24px;
+    }
+
+
+    .foto-caption {
+        position: relative;
+        padding: 18px 22px;
+        background: rgba(255, 255, 255, 0.88); 
+        backdrop-filter: blur(4px);            
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 8px;                   
+        box-shadow: 0 8px 22px rgba(0,0,0,0.28); 
+        width: fit-content;
+        max-width: 85%;
+        color: #000;
+        margin-top: 20px;
+    }
+
+
+    .foto-caption h3 {
+        font-size: 16px;    
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        margin-bottom: 6px;
+    }
+
+    .foto-caption h3 span {
+        font-weight: 700;
+    }
+
+    .foto-caption p {
+        font-size: 13px;
+    }
+
+    .foto-block {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
+
+    .foto-block.show {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    #branding {
+        width: 100%;
+        background: #dcdcdc url("semitono.png") repeat;
+        padding-bottom: 40px;
+    }
+
+
+    .branding-top-strip img {
+        width: 100%;
+        display: block;
+    }
+
+    .branding-content {
+        width: 90%;
+        max-width: 1300px;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .branding-title {
+        width: 420px;
+        display: block;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    .branding-main {
+        display: flex;  
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+
+    .text-block {
+        width: 55%;
+        padding: 30px;
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
+    }
+
+    .text-block p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: #333;
+        line-height: 1.45;
+    }
+
+    .byme-img {
+        width: 38%;
+        margin-left: 30px;
+    }
+
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="portada">
+            <img class="fade" src="portada.png" alt="My Portafolio">
+    </section>
+        <section class="banner">
+            <img class="fade" src="banner.png">
+                </section>
+    <section class="about">
+    <div class="about-box">
+            <img class="texture fade" src="semitono.png">
+                <img class="stars fade" src="semitono.png">
+                    <img class="cato-graf fade" src="Ilustración_sin_título.png">
+    <div class="paper-about fade">
+            <img class="idcard fade" src="Sin título-2.png">
+                <p class="about-text fade">
+                Hola! mi nombre es Cato, soy una diseñadora en formación, actualmente cursando 
+                segundo año de la carrera en la universidad UNIACC. Me muevo dentro de los campos 
+                del branding, fotografía, fotomontaje, mixed media, editorial, ilustración y 
+                dirección de arte en proyectos académicos e independientes. Me gusta adquirir 
+                conocimiento constante ya que a mis 21 años, mi cerebro debe nutrirse 
+                constantemente de las nuevas tendencias dentro del mundo #digital ;)
+            </p>
+        </div>
+    </div>
+</section>
+</div>
+<section class="foto-section">
+  <div class="wrapper foto-inner">
+    <img src="Sin título-3.png" alt="" class="foto-crack crack-1">
+        <img src="Sin título-3.png" alt="" class="foto-crack crack-2">
+           <img src="Sin título-3.png" alt="" class="foto-crack crack-3">
+
+    <div class="foto-heading">
+      <img src="titulo.png" alt="Proyecto #1 Fotografía">
+        </div>
+
+    <article class="foto-block">
+      <div class="foto-paper">
+        <img src="CONVERFDS.png" alt="Proyecto Converse" class="foto-main">
+            <div class="foto-caption">
+              <h3>CONVERSE: <span>#CAMPAÑA</span></h3>
+              <p>
+                Campaña fotográfica inspirada en el estilo original y old school de la marca, 
+                utilizando espacios urbanos y composición de afiches y retratos.
+              </p>
+            </div>
+          </div>
+    </article>
+
+    <article class="foto-block">
+      <div class="foto-paper">
+        <img src="JAVS.png" alt="Bodegón color rojo" class="foto-main">
+        <div class="foto-caption">
+          <h3>BODEGÓN COLOR <span>#ROJO</span></h3>
+          <p>
+            Serie fotográfica centrada en el color rojo, la sensualidad y la puesta en escena, 
+            trabajando composición de objetos, iluminación y dirección de arte.
+          </p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section id="branding">
+    <div class="branding-top-strip">
+        <img src="banner.png" alt="">
+            </div>
+
+    <div class="branding-content">
+        <img class="branding-title" src="titulo branding.png" alt="Branding">
+            <div class="branding-main">            
+                <div class="text-block">
+                    <p>
+                    By Me Fest es un festival creado exclusivamente para la 
+                    exposición y reproducción de piezas gráficas a partir 
+                    de técnicas de impresión análogas como la litografía, 
+                    xilografía, serigrafía y risografía. Cuenta con múltiples 
+                    artistas invitados que trabajan con estas técnicas, desde 
+                    ilustraciones, stickers, marcas, ilustraciones y redes sociales.
+                </p>
+            </div>
+
+    <img class="byme-img" src="nueve.png" alt="BY ME FEST">
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+    const items = document.querySelectorAll('.fade');
+    const trigger = window.innerHeight * 0.85;
+    function check(){
+    items.forEach(i=>{
+        const top = i.getBoundingClientRect().top;
+        if(top < trigger){
+            i.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll',check);
+window.addEventListener('load',check);
+const blocks = document.querySelectorAll('.foto-block');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+threshold: 0.2 
+});
+
+blocks.forEach(block => observer.observe(block));
+</script>
+</body>
+</html>
